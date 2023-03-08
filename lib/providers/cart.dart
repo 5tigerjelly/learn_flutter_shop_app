@@ -2,10 +2,14 @@ import 'package:flutter/foundation.dart';
 import './cart_item.dart';
 
 class Cart with ChangeNotifier {
-  Map<String, CartItem> _items;
+  Map<String, CartItem> _items = {};
 
   Map<String, CartItem> get item {
     return {..._items};
+  }
+
+  int get itemCount {
+    return _items.length;
   }
 
   void addItem(
@@ -31,5 +35,6 @@ class Cart with ChangeNotifier {
                 quantity: 1,
               ));
     }
+    notifyListeners();
   }
 }
