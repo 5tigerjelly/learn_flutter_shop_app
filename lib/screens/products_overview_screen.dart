@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/products.dart';
 import '../widgets/products_grid.dart';
+import '../widgets/badge.dart';
 
 enum FilterOptions {
   Favorites,
@@ -45,7 +46,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               ),
             ],
             icon: Icon(Icons.more_vert),
-          )
+          ),
         ],
       ),
       body: ProductsGrid(_showOnlyFavorites),
